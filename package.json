@@ -1,0 +1,23 @@
+{
+  "name": "image-gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "never-ending-image-gallery "
+  },
+  "author": "Ishan Varshney",
+  "license": "ISC",
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "universal-config": "^0.3.0",
+    "unsplash-js": "^6.0.0"
+  }
+}
