@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/app.js",
+    "backend": "nodemon server/app.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,8 @@
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "unsplash-js": "^6.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
