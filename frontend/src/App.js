@@ -13,9 +13,9 @@ function App() {
   const fetchData = async () => {
     setStart(start + count);
     const response = await Axios.get(
-      `/api/photos?start=${start}&count=${count}`
+      `/api/photos?start=${start + count}&count=${count}`
     );
-    setImages(images.concat(response.data));
+    if (response.data.length > 0) setImages(images.concat(response.data));
   };
   useEffect(async () => {
     setLoading(true);
@@ -29,7 +29,7 @@ function App() {
         setError('');
         break;
       } else {
-        setTimeout(() => setError('Something is unusual!'), 1000);
+        setTimeout(() => setError('Something is unusual!'), 100);
       }
     }
   }, []);
