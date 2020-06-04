@@ -1,0 +1,17 @@
+.loader {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-left: 25px solid lightgreen;
+  border-right: 25px solid skyblue;
+  border-top: 25px solid gray;
+  border-bottom: 25px solid gray;
+  background-color: white;
+  margin: 300px auto;
+  animation: load 1s linear infinite;
+}
+@keyframes load {
+  100% {
+    transform: rotate(360deg);
+  }
+}

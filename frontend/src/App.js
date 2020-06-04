@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Axios from 'axios';
 import Spinner from './components/Spinner/Spinner';
+import Loader from './components/Loader/Loader';
 import InfiniteScroll from 'react-infinite-scroll-component';
 function App() {
   const [images, setimages] = useState([]);
@@ -19,7 +20,7 @@ function App() {
     <div className='App'>
       <h1>IMAGE GALLERY</h1>
       {loading ? (
-        <Spinner />
+        <Loader />
       ) : (
         <div className='image-grid'>
           <InfiniteScroll
