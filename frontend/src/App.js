@@ -5,15 +5,23 @@ import Spinner from './components/Spinner/Spinner';
 import Loader from './components/Loader/Loader';
 import InfiniteScroll from 'react-infinite-scroll-component';
 function App() {
-  const [images, setimages] = useState([]);
+  const [images, setImages] = useState([]);
   const [start, setStart] = useState(1);
-  const [end, setEnd] = useState(28);
+  const [count, setCount] = useState(28);
   const [loading, setLoading] = useState(false);
-  const fetchData = () => {};
+  const fetchData = async () => {
+    setStart(start + count);
+    const response = await Axios.get(
+      `/api/photos?start=${start}&count=${count}`
+    );
+    setImages(images.concat(response.data));
+  };
   useEffect(async () => {
     setLoading(true);
-    const response = await Axios.get(`/api/photos?start=${start}&end=${end}`);
-    setimages(response.data);
+    const response = await Axios.get(
+      `/api/photos?start=${start}&count=${count}`
+    );
+    setImages(response.data);
     setLoading(false);
   }, []);
   return (

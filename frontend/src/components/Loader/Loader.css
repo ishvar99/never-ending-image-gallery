@@ -1,11 +1,11 @@
 .loader {
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border-left: 25px solid lightgreen;
-  border-right: 25px solid skyblue;
-  border-top: 25px solid gray;
-  border-bottom: 25px solid gray;
+  border-left: 16px solid lightgreen;
+  border-right: 16px solid skyblue;
+  border-top: 16px solid gray;
+  border-bottom: 16px solid gray;
   background-color: white;
   margin: 300px auto;
   animation: load 1s linear infinite;
