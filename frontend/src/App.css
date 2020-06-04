@@ -1,7 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  text-align: center;
   align-items: center !important;
 }
 h1 {

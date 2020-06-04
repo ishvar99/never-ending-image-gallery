@@ -1,14 +1,15 @@
 .loader {
-  width: 50px;
-  height: 50px;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
-  border-left: 16px solid lightgreen;
-  border-right: 16px solid skyblue;
-  border-top: 16px solid gray;
-  border-bottom: 16px solid gray;
+  border-left: 20px solid lightgreen;
+  border-right: 20px solid skyblue;
+  border-top: 20px solid gray;
+  border-bottom: 20px solid gray;
   background-color: white;
-  margin: 300px auto;
-  animation: load 1s linear infinite;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  animation: load 0.7s linear infinite;
 }
 @keyframes load {
   100% {
