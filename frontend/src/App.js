@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Axios from 'axios';
+import Spinner from './components/Spinner/Spinner';
+import InfiniteScroll from 'react-infinite-scroll-component';
 function App() {
   const [images, setimages] = useState([]);
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(28);
-  useEffect(() => {
-    Axios.get(`/api/photos?start=${start}&end=${end}`).then((response) => {
-      console.log(response.data);
-      setimages(response.data);
-    });
+  const [loading, setLoading] = useState(false);
+  const fetchData = () => {};
+  useEffect(async () => {
+    setLoading(true);
+    const response = await Axios.get(`/api/photos?start=${start}&end=${end}`);
+    setimages(response.data);
+    setLoading(false);
   }, []);
   return (
     <div className='App'>
       <h1>IMAGE GALLERY</h1>
-      <div className='image-grid'>
-        {images.map((image) => {
-          return (
-            <div className='image'>
-              <img key={image.id} src={image.urls.thumb} />
-            </div>
-          );
-        })}
-      </div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className='image-grid'>
+          <InfiniteScroll
+            style={{ overflow: 'hidden', textAlign: 'center' }}
+            dataLength={images.length}
+            next={fetchData}
+            hasMore={true}
+            loader={<Spinner />}
+          >
+            {images.map((image) => {
+              return <img key={image.id} src={image.urls.thumb} />;
+            })}
+          </InfiniteScroll>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.box .spinner {
+  height: 60px;
+  width: 60px;
+  background: rgba(0, 0, 255, 0.2);
+  border-radius: 50%;
+  transform: scale(0);
+  margin: auto;
+  background: rgba(0, 0, 255, 0.8);
+  opacity: 1;
+  animation: spinnerLoader 700ms linear infinite;
+}
+@keyframes spinnerLoader {
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

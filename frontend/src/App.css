@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  align-items: center;
+  align-items: center !important;
 }
 
 .image-grid {
@@ -12,11 +12,8 @@
   width: 75%;
   flex-wrap: wrap;
 }
-.image {
+img {
   padding: 20px;
-}
-
-.image img {
   height: 250px;
   width: 300px;
 }
