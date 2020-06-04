@@ -12,7 +12,7 @@ const app = require('express')();
 
 app.get('/api/photos', (req, res) => {
   unsplash.photos
-    .listPhotos(1, 30)
+    .listPhotos(req.query.start, req.query.end)
     .then(toJson)
     .then((data) => res.json(data));
 });

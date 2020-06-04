@@ -3,8 +3,10 @@ import './App.css';
 import Axios from 'axios';
 function App() {
   const [images, setimages] = useState([]);
+  const [start, setStart] = useState(1);
+  const [end, setEnd] = useState(28);
   useEffect(() => {
-    Axios.get('/api/photos').then((response) => {
+    Axios.get(`/api/photos?start=${start}&end=${end}`).then((response) => {
       console.log(response.data);
       setimages(response.data);
     });
